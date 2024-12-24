@@ -1,0 +1,36 @@
+{
+  "name": "task-manager",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@primevue/forms": "^4.2.5",
+    "@primevue/themes": "^4.2.5",
+    "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
+    "lg-thumbnail": "^1.2.1",
+    "lg-video": "^1.4.0",
+    "lightgallery": "^2.8.2",
+    "pinia": "^2.2.6",
+    "postcss": "^8.4.49",
+    "primeicons": "^7.0.0",
+    "primevue": "^4.2.5",
+    "quill": "^2.0.3",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-primeui": "^0.3.4",
+    "vue": "^3.5.13",
+    "vue-router": "^4.4.5",
+    "vuedraggable": "^4.1.0",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.1",
+    "vite": "^6.0.1",
+    "vite-plugin-vue-devtools": "^7.6.5"
+  }
+}

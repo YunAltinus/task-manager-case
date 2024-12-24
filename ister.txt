@@ -1,0 +1,61 @@
+Task Manager Uygulaması
+
+Bu case, bir **Task Manager (Görev Yöneticisi)** uygulaması geliştirilmesini içeriyor. Sizden bu uygulamayı Node.js ve Vue 3 kullanarak geliştirmesi bekleniyor. Görevlerin veri saklama ve önbellekleme için MySQL, MongoDB ve Redis kullanılacak.
+
+ Proje Açıklaması
+
++ Kullanıcılar, sisteme kayıt olabilir ve giriş yapabilir.
++ Kullanıcılar, görevler oluşturabilir, güncelleyebilir ve silebilir.
++ Her görev bir başlık, açıklama, öncelik ve son tarih bilgisi ( taskın son bitiş tarihi ) zorunlu olarak içerecek.
++ Ayrıca her  görev opsiyonel olarak resim,video ya da belge de içerebilir.
++ Eğer bir görev resim veya video içeriyorsa , görev detayında direkt olarak gösterilecek, belge içeriyorsa indir butonu yer alacak
++ Kullanıcılar, görevlerini **tamamlandı** veya **tamamlanmadı** olarak işaretleyebilir.
++ Ayrıca tamamlanmayan ve son tarihine 1 günden az kalan tasklar için kullanıcıya mail gönderilecek.Bu mailde taskın başlığı ve son tarihi yer alacak.(Gerçek mail bilsi kullanılmayacak, mail içeriği konsola yazdırılacak)
++ Görevler veritabanında saklanacak ve Redis kullanılarak listeleme işlemleri için önbellekleme yapılacak.
++ MongoDB, görevlerin geçmişini (örneğin: görev oluşturulma ve değişiklik logları ve mail gönderim logları) saklamak için kullanılacak.
++ Kullanıcı session tokenları rediste tutulacak
+
+ Teknoloji ve Gereksinimler
+
+1. **Backend (Node.js + Express):**
+    + Kullanıcı kayıt ve giriş sistemi (JWT Authentication).
+    + RESTful API'ler:
+      + Görev oluşturma (`POST /tasks`)
+      + Görev listeleme (`GET /tasks`)
+      + Görev güncelleme (`PUT /tasks/:id`)
+      + Görev silme (`DELETE /tasks/:id`)
+      + Filtreleme ve sıralama (`GET /tasks?status=completed&priority=high&endDate=2021-12-31&hasAttachment=true`)
+      + Login işlemleri 
+    + MySQL kullanarak kullanıcı ve görev verilerini saklama.
+    + Redis ile görev listeleme işlemlerini önbellekleme.
+    + MongoDB ile görev geçmişi kayıtlarını tutma (örneğin: görev güncellemeleri).
+
+2. **Frontend (Vue 3 + Composition API):**
+    + Kullanıcı arayüzü tasarımı (örneğin: giriş ekranı, görev listesi, görev oluşturma ve düzenleme ekranı).
+    - API çağrıları için **Axios** kullanımı.
+    - Görev listesi için dinamik filtreleme ve sıralama.
+    + Durum yönetimi için **Pinia** kullanımı.
+    + Form doğrulama (örneğin: görev başlığı boş bırakılamaz).
+
+3. **Veritabanı Yapısı:**
+    - **MySQL:** Kullanıcılar ve görevler için.
+    - **MongoDB:** Görev değişiklik geçmişi için (örneğin: `task_logs` koleksiyonu).
+    - **Redis:** Görev listelerinin önbelleğe alınması ve token kontrolü.
+
+4. **Diğer:**
+    - Proje çalıştırma talimatlarını içeren bir `README.md` dosyası.
+
+ Teslimat Beklentisi
+
+Adaydan aşağıdaki dosyaları içeren bir repo teslim etmesi bekleniyor:
+
+1. **Proje süresi: 5 gün (Bugün itibarıyla son gün 24.12.2024)**
+1. **Backend Kodu:** `server` klasöründe.
+2. **Frontend Kodu:** `client` klasöründe.
+3. **Veritabanı Şeması:** MySQL tabloları ve MongoDB koleksiyonları için gerekli tanımlar.
+5. **README.md:** Projeyi çalıştırma adımları ve açıklamaları içermeli.
+
+
+ 
+
+

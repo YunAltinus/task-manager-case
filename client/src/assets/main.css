@@ -1,0 +1,61 @@
+@layer tailwind-base, primevue, tailwind-utilities;
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-background);
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  font-family:
+    sans-serif;
+  padding: 0;
+  --p-card-shadow	: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+}
+
+a,
+.green {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+  padding: 3px;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  width: 10px;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.2); /* Çok saydam bir arka plan */
+  border-radius: 5px; /* Tam yuvarlak köşeler */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.2); /* Saydam kaydırma çubuğu */
+  border-radius: 5px; /* Tam yuvarlak köşeler */
+  border: 2px solid rgba(0, 0, 0, 0.3); /* Arkaplanla uyumlu kenar */
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.5); /* Hover (üzerine gelince) biraz daha opak */
+}
+
+/* Firefox için */
+.custom-scroll {
+  scrollbar-width: thin; /* İnce kaydırma çubuğu */
+  scrollbar-color: rgba(0, 0, 0, 0.3) rgba(0, 0, 0, 0.2); /* Thumb ve track renkleri */
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
