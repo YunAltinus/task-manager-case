@@ -1,0 +1,1 @@
+[![Video Başlığı]](https://youtu.be/VvI3ITLGrYA)
